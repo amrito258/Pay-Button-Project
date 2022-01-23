@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    background-color: lightcoral;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    position: absolute;
+    margin-top: -400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1{
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.container{
+    width: 400px;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex;
+    overflow: hidden;
+}
+
+.interective-container{
+    width: 150px;
+    height: 100px;
+    background-color: teal;
+    position: relative;
+}
+
+.text-container{
+    width: 250px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card{
+    width: 70px;
+    height: 40px;
+    background-color: rgb(135, 250, 215);
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.card-circles{
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    display: flex;
+}
+
+.card-circle{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.card-circle:nth-child(1){
+    background-color: rgb(120, 212, 83);
+}
+
+.card-circle:nth-child(2){
+    background-color: rgb(80, 153, 51);
+}
+
+.card-circle:nth-child(3){
+    background-color: rgb(40, 95, 18);
+}
+
+.post{
+    width: 60px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: lightgray;
+    position: absolute;
+    top: 100px;
+    left: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform .4s 0.2s;
+}
+
+.post-line{
+    width: 50px;
+    height: 10px;
+    background-color: gray;
+    position: relative;
+}
+
+.post-line::before{
+    content: "";
+    width: 50px;
+    height: 10px;
+    background-color: rgb(78, 77, 77);
+    position: absolute;
+    bottom: -10px;
+    border-radius: 0 0 10px 10px;
+}
+
+.post-screen{
+    width: 50px;
+    height: 30px;
+    background-color: whitesmoke;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: teal;
+    font-weight: bold;
+}
+
+.post-text{
+    opacity: 0;
+    transition-delay: 1s;
+}
+
+.post-numbers{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-number{
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+}
+
+.container:hover .card{
+    animation: movecard 1.2s ease-in-out forwards;
+}
+
+@keyframes movecard{
+    50%{
+        transform: rotate(-90deg) scale(0.8) translateX(70px);
+    }
+
+    100%{
+        transform: rotate(-90deg) scale(0.8) translateX(0px);
+    }
+}
+
+.container:hover .post{
+    transform: translateY(-70px);
+}
+
+.container:hover .post-text{
+    opacity: 1;
+}
